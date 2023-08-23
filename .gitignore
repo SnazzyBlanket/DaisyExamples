@@ -130,4 +130,7 @@ vs/*.log
 MyProjects/
 .cortex-debug.registers.state.json
 .cortex-debug.peripherals.state.json
-
+.icloud
+/**/AuLib-master
+/**/other libs
+/**/CloudSeed

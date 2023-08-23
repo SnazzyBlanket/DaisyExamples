@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/cricketbee/Downloads/EVANS JELLYBEAN DAISY/_evan'
+make: Leaving directory `/Users/cricketbee/Downloads/EVANS JELLYBEAN DAISY/_evan'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

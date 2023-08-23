@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/cricketbee/Desktop/DaisyExamples/patch'
+make: Leaving directory `/Users/cricketbee/Desktop/DaisyExamples/patch'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/cricketbee/Downloads/oscpocketd (2)/code_drums'
+make: Leaving directory `/Users/cricketbee/Downloads/oscpocketd (2)/code_drums'
+ 
+Makefile:13: ../../DaisyExamples/libdaisy/core/Makefile: No such file or directory
+make: *** No rule to make target `../../DaisyExamples/libdaisy/core/Makefile'.
+make: Failed to remake makefile `../../DaisyExamples/libdaisy/core/Makefile'.
+make: *** No targets specified and no makefile found.  Stop.
+

@@ -89,6 +89,7 @@
                 }
             }
         ]
-    }
+    },
+    "cmake.sourceDirectory": "/Users/cricketbee/Desktop/DaisyExamples/DaisySP"
     
 }

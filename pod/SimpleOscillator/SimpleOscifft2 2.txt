@@ -1,0 +1,164 @@
+
+#include "daisy_pod.h"
+#include "daisysp.h"
+
+#include "arm_math.h"
+#include "arm_const_structs.h"
+#define NUM_WAVEFORMS 4
+
+
+using namespace daisy;
+using namespace daisysp;
+
+DaisyPod   hw;
+Oscillator osc;
+Parameter  p_freq;
+
+
+
+
+#define FFT_SIZE 2048 
+#define FFT_BUF_SIZE (2*FFT_SIZE) 
+float fft_buf[FFT_BUF_SIZE];
+float output[FFT_SIZE];
+
+// global, so do_fft() knows when to run
+int fft_buf_index = 0;
+
+uint8_t waveforms[NUM_WAVEFORMS] = {
+    Oscillator::WAVE_SIN,
+    Oscillator::WAVE_TRI,
+    Oscillator::WAVE_POLYBLEP_SAW,
+    Oscillator::WAVE_POLYBLEP_SQUARE,
+};
+
+static float freq;
+float        sig;
+static int   waveform, octave;
+
+
+float do_fft(float *input, float *output)
+{
+
+  float32_t maxValue;
+  uint32_t index = 0;
+
+  int Fmax = hw.AudioSampleRate() / 2;  // 24000
+  uint32_t Nbins = FFT_SIZE / 2;                
+
+  /* Process the data through the CFFT/CIFFT module */
+    /* this must match FFT_SIZE, and 2048 is as high as Daisy can fit */
+  arm_cfft_f32(&arm_cfft_sR_f32_len2048, input, 0 /*ifftFlag*/, 1/*doBitReverse*/);
+
+  /* Process the data through the Complex Magnitude Module for
+  calculating the magnitude at each bin */
+  arm_cmplx_mag_f32(input, output, FFT_SIZE /*fftSize*/);
+
+  /* Calculates maxValue and returns corresponding BIN value */
+  arm_max_f32(output, FFT_SIZE /*fftSize*/, &maxValue, &index);
+
+/*
+    to calculate the freq of the selected bin
+    N (Bins) = FFT Size/2
+    FR = Fmax/N(Bins)
+*/
+
+    // error test
+    if (index >= Nbins) 
+        return -1.f;
+
+    // good result
+    return (float) index * ((float)Fmax / Nbins);
+}
+
+
+static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
+                          AudioHandle::InterleavingOutputBuffer out,
+                          size_t                                size)
+{
+    hw.ProcessDigitalControls();
+
+    waveform += hw.encoder.Increment();
+    waveform = DSY_CLAMP(waveform, 0, NUM_WAVEFORMS);
+    osc.SetWaveform(waveforms[waveform]);
+
+    if(hw.button2.RisingEdge())
+        octave++;
+    if(hw.button1.RisingEdge())
+        octave--;
+    octave = DSY_CLAMP(octave, 0, 4);
+
+    // convert MIDI to frequency and multiply by octave size
+    freq = mtof(p_freq.Process() + (octave * 12));
+    osc.SetFreq(freq);
+
+    // Audio Loop
+    for(size_t i = 0; i < size; i +=2)
+    {
+        // Process
+        sig        = osc.Process();
+
+
+        if (fft_buf_index < FFT_BUF_SIZE) {
+        fft_buf[fft_buf_index++] = sig;
+        fft_buf[fft_buf_index++] = 0.f;
+    }
+        out[i]     = sig;
+        out[i + 1] = sig;
+
+        
+    }
+}
+
+
+
+
+void InitSynth(float samplerate)
+{
+    // Init freq Parameter to knob1 using MIDI note numbers
+    // min 10, max 127, curve linear
+    p_freq.Init(hw.knob1, 0, 127, Parameter::LINEAR);
+
+    osc.Init(samplerate);
+    osc.SetAmp(1.f);
+
+    waveform = 0;
+    octave   = 0;
+}
+
+int main(void)
+{
+float samplerate;
+hw.Init();
+
+  
+
+    // Init everything
+    hw.Init();
+    hw.SetAudioBlockSize(4);
+    samplerate = hw.AudioSampleRate();
+    InitSynth(samplerate);
+      hw.StartAdc();
+    hw.StartAudio(AudioCallback);
+
+ while (1)
+    {
+        float f;
+        static float old_f = -1.f;
+
+        if (fft_buf_index == FFT_BUF_SIZE) {
+            // do FFT
+            f = do_fft(fft_buf, output);
+            // start collecting samples again
+            fft_buf_index = 0;
+        } else {
+            continue;
+        }
+
+        // if frequency value has changed, update display
+        if ((f > 0.f) && (f != old_f)) { 
+            osc.SetFreq(f);
+            old_f = f;
+        }
+    }
+}

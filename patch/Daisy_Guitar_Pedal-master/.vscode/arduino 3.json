@@ -1,0 +1,7 @@
+{
+    "sketch": "Daisy_Guitar_Pedal.ino",
+    "board": "STMicroelectronics:stm32:GenH7",
+    "configuration": "pnum=DAISY_SEED,upload_method=dfuMethod,xserial=disabled,usb=none,xusb=FS,opt=o2std,rtlib=nano",
+    "port": "COM3",
+    "output": "C:\\Users\\Lenovo\\Documents\\Arduino\\builds\\daisy"
+}

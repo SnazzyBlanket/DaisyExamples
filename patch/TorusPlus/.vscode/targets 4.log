@@ -1,0 +1,607 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+Makefile:67: warning: overriding commands for target `build/torusplus.elf'
+../../libdaisy/core/Makefile:241: warning: ignoring old commands for target `build/torusplus.elf'
+
+Makefile:77: warning: overriding commands for target `build'
+../../libdaisy/core/Makefile:250: warning: ignoring old commands for target `build'
+
+
+# Make data base, printed on Tue Jul 12 09:24:11 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile (from `../../libdaisy/core/Makefile', line 68)
+PREFIX = arm-none-eabi-
+# automatic
+?F = $(notdir $?)
+# environment
+ 
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# makefile (from `../../libdaisy/core/Makefile', line 200)
+LDSCRIPT = $(SYSTEM_FILES_DIR)/STM32H750IB_flash.lds
+# makefile (from `Makefile', line 10)
+CPP_SOURCES = torus.cpp dsp/fm_voice.cpp dsp/part.cpp dsp/resonator.cpp dsp/string.cpp dsp/string_synth_part.cpp resources.cpp 
+# makefile (from `Makefile', line 2)
+TARGET = torusplus
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from `../../libdaisy/core/Makefile', line 183)
+CPPFLAGS = $(CFLAGS) -fno-exceptions -fasm -finline -finline-functions-called-once -fshort-enums -fno-move-loop-invariants -fno-unwind-tables -Wno-register
+# makefile (from `../../libdaisy/core/Makefile', line 106)
+AS_DEFS = 
+# makefile (from `../../libdaisy/core/Makefile', line 128)
+AS_INCLUDES = 
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/cricketbee/Desktop/DaisyExamples/patch/TorusPlus
+# makefile
+SHELL = /bin/sh
+# makefile (from `../../libdaisy/core/Makefile', line 87)
+BIN = $(CP) -O binary -S
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from `../../libdaisy/core/Makefile', line 84)
+SZ = $(PREFIX)size
+# environment
+_ = /usr/bin/make
+# makefile (from `../../libdaisy/core/Makefile', line 180)
+CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -Wno-missing-attributes -fasm -fdata-sections -ffunction-sections -Wno-stringop-overflow -g -ggdb -MMD -MP -MF"$(@:%.o=%.d)"
+# makefile (from `../../libdaisy/core/Makefile', line 1)
+MAKEFILE_LIST :=  Makefile ../../libdaisy/core/Makefile
+# makefile (from `../../libdaisy/core/Makefile', line 83)
+CP = $(PREFIX)objcopy
+# makefile (from `../../libdaisy/core/Makefile', line 193)
+C_STANDARD = -std=gnu11
+# makefile (from `../../libdaisy/core/Makefile', line 82)
+AS = $(PREFIX)gcc -x assembler-with-cpp
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+INFOPATH = /opt/homebrew/share/info:
+# makefile (from `../../libdaisy/core/Makefile', line 3)
+CHIPSET = stm32h7x
+# makefile (from `../../libdaisy/core/Makefile', line 23)
+GDB_FLAGS = 
+# environment
+VSCODE_CWD = /Users/cricketbee/Desktop/DaisyExamples/patch/TorusPlus
+# environment
+PATH = /opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Users/cricketbee/go/bin:/Users/cricketbee
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from `Makefile', line 31)
+APP_TYPE = BOOT_QSPI
+# makefile (from `../../libdaisy/core/Makefile', line 194)
+CPP_STANDARD = -std=gnu++14
+# environment
+GOPATH = /Users/cricketbee/go
+# makefile (from `Makefile', line 6)
+DAISYSP_DIR = ../../DaisySP/
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from `../../libdaisy/core/Makefile', line 214)
+LDFLAGS =  $(MCU) --specs=nano.specs --specs=nosys.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections -Wl,--print-memory-usage
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.hhBbINJlm5/Listeners
+# automatic
+%F = $(notdir $%)
+# makefile (from `Makefile', line 30)
+OPT = -Os
+# makefile (from `../../libdaisy/core/Makefile', line 5)
+TARGET_BIN = $(TARGET).bin
+# makefile (from `Makefile', line 18)
+CC_SOURCES = $(STMLIB_DIR)/dsp/units.cc $(STMLIB_DIR)/utils/random.cc cv_scaler.cc 
+# environment
+PWD = /Users/cricketbee/desktop/daisyexamples/patch/torusplus
+# makefile (from `../../libdaisy/core/Makefile', line 9)
+QSPI_ADDRESS = 0x90040000
+# makefile (from `Makefile', line 7)
+STMLIB_DIR = ../../stmlib
+# environment
+HOMEBREW_CELLAR = /opt/homebrew/Cellar
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+MANPATH = /opt/local/share/man:/opt/homebrew/share/man::
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/cricketbee
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/cricketbee/Library/Application Support/Code/CachedData/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
+# environment
+LOGNAME = cricketbee
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from `../../libdaisy/core/Makefile', line 19)
+OCD_DIR = /usr/local/share/openocd/scripts
+# environment
+ZSH = /Users/cricketbee/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from `../../libdaisy/core/Makefile', line 116)
+C_DEFS =  -DUSE_HAL_DRIVER -DSTM32H750xx -DHSE_VALUE=16000000  -DCORE_CM7 -DSTM32H750IB -DARM_MATH_CM7 -DUSE_FULL_LL_DRIVER
+# environment
+XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+LC_TERMINAL = iTerm2
+# environment
+SHLVL = 3
+# makefile (from `../../libdaisy/core/Makefile', line 99)
+FLOAT-ABI = -mfloat-abi=hard
+# makefile (from `../../libdaisy/core/Makefile', line 86)
+HEX = $(CP) -O ihex
+# makefile (from `../../libdaisy/core/Makefile', line 79)
+CC = $(PREFIX)gcc
+# makefile (from `../../libdaisy/core/Makefile', line 41)
+BUILD_DIR = build
+# makefile (from `../../libdaisy/core/Makefile', line 169)
+ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = cricketbee
+# makefile
+.DEFAULT_GOAL := all
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w1t0p0:0C7CCDED-E3EB-4B7F-A359-3ED94FC46A7E
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from `../../libdaisy/core/Makefile', line 210)
+LIBDIR = -L$(LIBDAISY_DIR)/build -L $(DAISYSP_DIR)/build
+# makefile (from `../../libdaisy/core/Makefile', line 93)
+CPU = -mcpu=cortex-m7
+# makefile (from `../../libdaisy/core/Makefile', line 96)
+FPU = -mfpu=fpv5-d16
+# makefile (from `../../libdaisy/core/Makefile', line 20)
+PGM_DEVICE = interface/stlink.cfg
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# makefile (from `../../libdaisy/core/Makefile', line 7)
+BOOT_BIN = $(wildcard $(SYSTEM_FILES_DIR)/dsy_bootloader*)
+# environment
+TERM_PROGRAM = iTerm.app
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/g0/l1whnkgn26zgpvrkcv2dxrg40000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/cricketbee/Library/Application Support/Code/1.69.0-main.sock
+# environment
+MallocNanoZone = 0
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 3.4.15
+# makefile (from `../../libdaisy/core/Makefile', line 18)
+OCD = openocd
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.6469596.6469602.9854E9EA-B6CE-494D-B5AA-3D7D24356D76
+# environment
+LC_TERMINAL_VERSION = 3.4.15
+# environment
+HOMEBREW_PREFIX = /opt/homebrew
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from `../../libdaisy/core/Makefile', line 6)
+TARGET_ELF = $(TARGET).elf
+# automatic
++F = $(notdir $+)
+# environment
+ITERM_SESSION_ID = w1t0p0:0C7CCDED-E3EB-4B7F-A359-3ED94FC46A7E
+# makefile (from `../../libdaisy/core/Makefile', line 8)
+FLASH_ADDRESS = 0x08000000
+ 
+# environment
+HOMEBREW_REPOSITORY = /opt/homebrew
+# makefile (from `../../libdaisy/core/Makefile', line 102)
+MCU = $(CPU) -mthumb $(FPU) $(FLOAT-ABI)
+# environment
+COLORFGBG = 7;0
+# makefile (from `../../libdaisy/core/Makefile', line 166)
+C_INCLUDES = -I. -Iresources -I../.. -Wno-unused-local-typedefs -include stm32h7xx.h -I$(LIBDAISY_DIR) -I$(LIBDAISY_DIR)/src/ -I$(LIBDAISY_DIR)/src/sys -I$(LIBDAISY_DIR)/src/usbd -I$(LIBDAISY_DIR)/src/usbh -I$(LIBDAISY_DIR)/Drivers/CMSIS/Include/ -I$(LIBDAISY_DIR)/Drivers/CMSIS/DSP/Include -I$(LIBDAISY_DIR)/Drivers/CMSIS/Device/ST/STM32H7xx/Include -I$(LIBDAISY_DIR)/Drivers/STM32H7xx_HAL_Driver/Inc/ -I$(LIBDAISY_DIR)/Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I$(LIBDAISY_DIR)/Middlewares/ST/STM32_USB_Host_Library/Core/Inc -I$(LIBDAISY_DIR)/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc -I$(SYSTEM_FILES_DIR)/ -I$(DAISYSP_DIR)/Source -I$(FATFS_DIR)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# makefile (from `../../libdaisy/core/Makefile', line 155)
+FATFS_DIR = $(LIBDAISY_DIR)/Middlewares/Third_Party/FatFs/src
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+ITERM_PROFILE = Default
+# makefile (from `../../libdaisy/core/Makefile', line 21)
+OCDFLAGS = -f $(PGM_DEVICE) -f target/$(CHIPSET).cfg
+# makefile (from `../../libdaisy/core/Makefile', line 80)
+CXX = $(PREFIX)g++ 
+# makefile (from `../../libdaisy/core/Makefile', line 157)
+FATFS_SOURCES =  $(FATFS_DIR)/diskio.c $(FATFS_DIR)/ff.c $(FATFS_DIR)/ff_gen_drv.c $(FATFS_DIR)/option/ccsbcs.c
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# makefile (from `Makefile', line 33)
+SYSTEM_FILES_DIR = $(LIBDAISY_DIR)/core
+# makefile (from `Makefile', line 5)
+LIBDAISY_DIR = ../../libdaisy
+# makefile (from `../../libdaisy/core/Makefile', line 81)
+GDB = $(PREFIX)gdb
+# makefile (from `../../libdaisy/core/Makefile', line 209)
+LIBS = -ldaisy -lc -lm -lnosys -ldaisysp
+# automatic
+^F = $(notdir $^)
+# makefile (from `../../libdaisy/core/Makefile', line 55)
+C_SOURCES = $(SYSTEM_FILES_DIR)/startup_stm32h750xx.c
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# makefile (from `Makefile', line 51)
+OBJECTS = $(addprefix $(BUILD_DIR)/,$(notdir $(C_SOURCES:.c=.o))) $(addprefix $(BUILD_DIR)/,$(notdir $(CPP_SOURCES:.cpp=.o))) $(addprefix $(BUILD_DIR)/,$(notdir $(CC_SOURCES:.cc=.o))) $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_PID = 94283
+# variable set hash-table stats:
+# Load=131/1024=13%, Rehash=0, Collisions=33/308=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# dsp (device 16777230, inode 5908766): No files, no impossibilities so far.
+# . (device 16777230, inode 5908753): 18 files, no impossibilities.
+# ../../stmlib/dsp (device 16777230, inode 4610747): No files, no impossibilities so far.
+# ../../stmlib/utils (device 16777230, inode 4611741): No files, no impossibilities so far.
+# build: could not be stat'd.
+# ../../libdaisy/core (device 16777230, inode 4610121): 3 files, no impossibilities so far.
+
+# 21 files, no impossibilities in 6 directories.
+
+# Implicit Rules
+
+build/%.o: %.c Makefile | build
+#  commands to execute (from `Makefile', line 55):
+	$(CC) -c $(CFLAGS) $(C_STANDARD) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/%.o: %.cpp Makefile | build
+#  commands to execute (from `Makefile', line 58):
+	$(CXX) -c $(CPPFLAGS) $(CPP_STANDARD) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.cpp=.lst)) $< -o $@
+	
+
+build/%.o: %.cc Makefile | build
+#  commands to execute (from `Makefile', line 61):
+	$(CXX) -c $(CPPFLAGS) $(CPP_STANDARD) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.cc=.lst)) $< -o $@
+	
+
+build/%.o: %.s Makefile | build
+#  commands to execute (from `Makefile', line 64):
+	$(AS) -c $(CFLAGS) $< -o $@
+	
+
+build/%.hex: build/%.elf | build
+#  commands to execute (from `Makefile', line 71):
+	$(HEX) $< $@
+	
+
+build/%.bin: build/%.elf | build
+#  commands to execute (from `Makefile', line 74):
+	$(BIN) $< $@
+	
+
+# 6 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+build/torus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+program:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../../libdaisy/core/Makefile', line 281):
+	$(OCD) -s $(OCD_DIR) $(OCDFLAGS) \
+	-c "program ./build/$(TARGET).elf verify reset exit"
+	
+
+# Not a target:
+build/resonator.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+debug_client:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../../libdaisy/core/Makefile', line 278):
+	ddd --eval-command="target remote localhost:3333" --debugger $(GDB) $(TARGET_ELF)
+	
+
+all: build/torusplus.elf build/torusplus.hex build/torusplus.bin build/torusplus.elf build/torusplus.hex build/torusplus.bin
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
+
+openocd:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../../libdaisy/core/Makefile', line 263):
+	$(OCD) -s $(OCD_DIR) $(OCDFLAGS)
+	
+
+# Not a target:
+build/string_synth_part.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+program-dfu:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../../libdaisy/core/Makefile', line 289):
+	dfu-util -a 0 -s $(FLASH_ADDRESS):leave -D $(BUILD_DIR)/$(TARGET_BIN) -d ,0483:df11
+	
+
+# Not a target:
+build/torusplus.bin:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-11 23:05:21
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+debug:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../../libdaisy/core/Makefile', line 266):
+	@if ! nc -z localhost 3333; then \
+	echo "\n\t[Error] OpenOCD is not running! Start it with: 'make openocd'\n"; exit 1; \
+	else \
+	$(GDB)  -ex "target extended localhost:3333" \
+	-ex "monitor arm semihosting enable" \
+	-ex "monitor reset halt" \
+	-ex "load" \
+	-ex "monitor reset init" \
+	$(GDBFLAGS) build/$(TARGET).elf; \
+	fi
+	
+
+program-app:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../../libdaisy/core/Makefile', line 292):
+	dfu-util -a 0 -s $(QSPI_ADDRESS):leave -D $(BUILD_DIR)/$(TARGET_BIN) -d ,0483:df11
+	
+
+build:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  commands to execute (from `Makefile', line 77):
+	mkdir $@
+	
+
+# Not a target:
+build/units.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/torusplus.hex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/random.o:
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/startup_stm32h750xx.o: ../../libdaisy/core/startup_stm32h750xx.c Makefile | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `startup_stm32h750xx'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
+#  commands to execute (from `Makefile', line 55):
+	$(CC) -c $(CFLAGS) $(C_STANDARD) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+build/cv_scaler.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/torusplus.elf: build/startup_stm32h750xx.o build/torus.o build/fm_voice.o build/part.o build/resonator.o build/string.o build/string_synth_part.o build/resources.o build/units.o build/random.o build/cv_scaler.o Makefile build/startup_stm32h750xx.o build/torus.o build/fm_voice.o build/part.o build/resonator.o build/string.o build/string_synth_part.o build/resources.o Makefile
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
+#  commands to execute (from `Makefile', line 67):
+	$(CXX) $(OBJECTS) $(LDFLAGS) -o $@
+	$(SZ) $@
+	
+
+# Not a target:
+build/resources.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../libdaisy/core/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 17:36:36
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+build/fm_voice.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../../libdaisy/core/Makefile', line 256):
+	-rm -fR $(BUILD_DIR)
+	
+
+# Not a target:
+build/string.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/part.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../libdaisy/core/startup_stm32h750xx.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 17:36:36
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+program-boot:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../../libdaisy/core/Makefile', line 295):
+	dfu-util -a 0 -s $(FLASH_ADDRESS):leave -D $(BOOT_BIN) -d ,0483:df11
+	
+
+# files hash-table stats:
+# Load=29/1024=3%, Rehash=0, Collisions=3/87=3%
+# VPATH Search Paths
+
+vpath %.c ../../libdaisy/core
+vpath %.cpp dsp
+vpath %.c ../../libdaisy/core
+vpath %.cpp dsp
+vpath %.cc ../../stmlib/dsp:../../stmlib/utils
+
+# 5 `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 2
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4058 / max = 4058 / min = 4058 / avg = 4058
+
+# Finished Make data base on Tue Jul 12 09:24:11 2022
+
+ 

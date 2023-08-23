@@ -1,0 +1,66 @@
+{
+  "version": "0.2.0",
+  "projectName": "stm32h750x",
+  "configurations": [
+      {
+          "cwd": "${workspaceFolder}",
+          "executable": "./bin/blank.elf",
+          "name": "Debug with JLink",
+          "request": "launch",
+          "type": "cortex-debug",
+          "device": "",
+          "runToEntryPoint": "main",
+          "showDevDebugOutput": "none",
+          "servertype": "jlink"
+      },
+      {
+          "name": "Cortex Debug",
+  "cwd": "${workspaceRoot}",
+  "executable": "${workspaceRoot}/build/blank.elf",
+  "request": "launch",
+  "type": "cortex-debug",
+  "servertype": "openocd",
+  "configFiles": [
+  "interface/stlink.cfg",
+  "target/stm32h7x.cfg",
+  ],
+  "openOCDLaunchCommands": ["init", "reset init"],
+  "runToMain": true,
+  
+      },
+
+      
+  
+      
+
+      {
+          "name": "STlinkdebug",
+          "cwd": "${workspaceRoot}",
+          "executable": "${workspaceRoot}/build/blank.elf",
+          "request": "launch",
+          "type": "cortex-debug",
+          "servertype": "stlink",
+          "showDevDebugOutput": "both",
+          "device": "STM32H750x",
+          "interface": "jtag",
+          "svdFile": "./.vscode/STM32H750x.svd",
+          "runToMain": true,
+          "swoConfig": {
+              "enabled": true,
+              "cpuFrequency": 480000000,
+              "swoFrequency": 1000000,
+              "source": "probe",
+              "decoders": [
+                  {
+                      "label": "ITM port 0 output",
+                      "type": "console",
+                      "port": 0,
+                      "showOnStartup": true,
+                      "encoding": "ascii"
+                  }
+              ]
+          }
+      },
+  
+  ]
+}
